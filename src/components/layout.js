@@ -7,6 +7,15 @@ const ListLink = props => (
   </li>
 )
 
+const Signature = props => (
+  <div style={{ color: `#668CFF`, fontFamily: `CocoGothic`}}>
+    <p style={{ fontWeight: `bold`, marginBottom: `0` }}>von {props.name}</p>
+    <p>vor {props.daysNumber}</p>
+    <div>
+      <p style={{ fontWeight: `bold`}}>div with labels</p>
+    </div>
+  </div>
+)
 export default function Layout({ children }) {
   return (
     <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
@@ -21,6 +30,9 @@ export default function Layout({ children }) {
         </ul>
       </header>
       {children}
+      <footer>
+        <Signature name="Max Mustermann" daysNumber="3 Tagen"></Signature>
+      </footer>
     </div>
   )
 }
