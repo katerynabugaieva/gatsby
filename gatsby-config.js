@@ -6,12 +6,19 @@
 
 module.exports = {
   /* Your site config here */
-   // highlight-start
-   siteMetadata: {
+  // highlight-start
+  siteMetadata: {
     title: `Pandas eating lots`,
   },
   // highlight-end
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
     `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
@@ -19,6 +26,5 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    
   ],
 }
